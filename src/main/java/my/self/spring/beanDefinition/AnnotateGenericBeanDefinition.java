@@ -2,15 +2,15 @@ package my.self.spring.beanDefinition;
 
 public class AnnotateGenericBeanDefinition implements AnnotateBeanDefinition{
 
-    private Class clazz;
+    private Class<?> clazz;
 
     private String scope;
 
-    public Class getClazz() {
+    public Class<?> getClazz() {
         return clazz;
     }
 
-    public void setClazz(Class clazz) {
+    public void setClazz(Class<?> clazz) {
         this.clazz = clazz;
     }
 

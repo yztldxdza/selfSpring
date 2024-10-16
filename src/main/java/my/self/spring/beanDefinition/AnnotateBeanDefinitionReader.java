@@ -4,7 +4,11 @@ import my.self.spring.annotation.Scope;
 
 public class AnnotateBeanDefinitionReader {
 
-    private BeanDefinitionRegistry registry;
+    private final BeanDefinitionRegistry registry;
+
+    public AnnotateBeanDefinitionReader(BeanDefinitionRegistry registry) {
+        this.registry = registry;
+    }
 
     // 注册我们的 路径扫描 这个Bean 到 Bean工厂
     public void register(Class<?> componentClass) {

@@ -1,17 +1,18 @@
 package my.self.spring.applicationContext;
 
 import my.self.spring.beanDefinition.AnnotateBeanDefinitionReader;
+import my.self.spring.beanDefinition.BeanDefinitionRegistry;
+import my.self.spring.beanFactory.GenericApplicationContext;
 
 public class AnnotationConfigApplicationContext
-// extends AbstractApplicationContext
-// implements ApplicationContext
+extends GenericApplicationContext
+implements BeanDefinitionRegistry
 {
-
     private AnnotateBeanDefinitionReader reader;
 
     // 如果有人调用这个无参构造，必须先调用父类的无参构造
     public AnnotationConfigApplicationContext() {
-        this.reader = new AnnotateBeanDefinitionReader();
+        this.reader = new AnnotateBeanDefinitionReader(this);
     }
 
     public AnnotationConfigApplicationContext(Class<?> componentClass) {
